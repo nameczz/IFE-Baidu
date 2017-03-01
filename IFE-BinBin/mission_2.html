@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>IFE JS Task02</title> 
+
+</head>
+<body>
+	<h3>球员三分命中数</h3>
+	<ul id="shooter-list">
+		
+	</ul>
+	
+</body>
+<script type="text/javascript">
+	const shootData = [
+		['curry', 1200],
+		['korver', 700],
+		['klay', 1000],
+		['Ray Allen', 1050],
+		['kobe', 1100],
+		['James', 800]
+	];
+
+	(() => {
+		let bestShooter = [];
+		
+		// 定义sort function
+		let sortArr = (a,b) => {
+			return b[1] - a[1];
+		}
+
+		// 加入HTML
+		let makeShooter = arr => {
+			let	shooterList = document.getElementById('shooter-list'),
+				template = '';
+			for (let i=0; i<arr.length; i++) {
+				template += `<li>NO${i+1}: ${arr[i][0]}, ${arr[i][1]}</li>`;
+			}
+			shooterList.innerHTML = template;
+		}		
+
+		// 删选数据
+		shootData.forEach((arr) => {	
+			if (arr[1] >= 1000) {
+				bestShooter.push(arr);
+			}
+		})
+
+		makeShooter(bestShooter.sort(sortArr));
+	})()
+</script>
+</html>
+
+

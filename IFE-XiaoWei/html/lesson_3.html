@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>三栏布局</title>
+	<style type="text/css">
+		ul,li{margin: 0; padding: 0; list-style: none}
+		.box{background: #eee; border: 1px solid #999; padding: 20px 140px 20px 220px}
+		.team{width: 80px; height: 80px;  margin-bottom: 10px; background: url('../img/curry.jpg'); background-size: 80px 80px}
+
+		.box-content,.box-left,.box-right{float: left; background: #fff; border: 1px solid #999; padding: 20px; box-sizing: border-box;}
+
+		.box-content{width: 100%; }
+		.box-left{position:relative; left: -210px; width: 200px; margin-left: -100%;}
+		.box-right{position:relative; right: -130px; width:120px; margin-left: -120px;}
+		.box::after{display: block; content: ' '; height: 0; visibility: hidden; clear:both;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box-content">
+			<ul>
+				<li class="team"></li>
+				<li class="team"></li>
+				<li class="team"></li>
+				<li class="team"></li>
+			</ul>
+			<ul>
+				<li class="team"></li>
+				<li class="team"></li>
+				<li class="team"></li>
+				<li class="team"></li>
+			</ul>
+			<ul>
+				<li class="team"></li>
+				<li class="team"></li>
+				<li class="team"></li>
+				<li class="team"></li>
+			</ul>
+		</div>
+		<div class="box-left">
+			<div class="team"></div>
+		</div>
+		<div class="box-right">
+			<ul>
+				<li class="team"></li>
+				<li class="team"></li>
+				<li class="team"></li>
+				<li class="team"></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

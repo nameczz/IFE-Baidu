@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>IFE JS Task03</title> 
+	<style type="text/css">
+		ul,li{list-style: none;margin: 0; padding: 0}
+		ul{border: 1px solid #000;padding: 20px; margin-bottom: 20px}
+		li{margin-bottom: 10px;}
+	</style>
+</head>
+<body>
+	<ul id="source">
+		<p>原数据</p>
+		<li>库里三分命中率: <b>70%</b></li>
+		<li>汤普森三分命中率: <b>56%</b></li>
+		<li>杜兰特三分命中率: <b>48%</b></li>
+		<li>科比三分命中率: <b>50%</b></li>
+		<li>韦德三分命中率: <b>46%</b></li>
+		<li>诺维斯基三分命中率: <b>52%</b></li>
+		<li>詹姆斯三分命中率: <b>50%</b></li>
+		<li>哈登三分命中率: <b>51%</b></li>
+	</ul>
+
+	<ul id="resort">
+		<p>排序后数据</p>
+	</ul>
+
+	<button id="sort-btn">排序</button>
+</body>
+<script type="text/javascript">
+	// 获取数据
+	let getData = () => {
+		let data = [],
+			dataSource = document.getElementById('source').getElementsByTagName('li');
+
+		for (let i=0; i<dataSource.length; i++) {
+			let arr = dataSource[i].innerText.split(' ');
+			data.push(arr);
+		}
+		return data;
+	}
+
+	// 数据排序
+	let sortAqiData = data => {
+		data.sort((a,b) => {
+			return parseInt(b[1]) - parseInt(a[1]);
+		})
+
+		return data;
+	}
+
+	// 加入HTML
+	let render = data => {
+		let resort = document.getElementById('resort'),
+			template = '',
+			chineseNum = ['一','二','三','四','五','六','七','八','九','十'];
+
+		for (let i=0; i<data.length; i++) {
+			let name = data[i][0],
+				score = data[i][1];
+
+			template += `<li>第${chineseNum[i]}名: ${name} <b>${score}</b></li>`;
+		}
+
+		resort.innerHTML += template;
+	}
+
+	// 点击方法
+	let btnHandle = () => {
+		let aqiData = sortAqiData(getData());
+		render(aqiData);
+	}
+	
+	//启动点击事件
+	(() => {
+		let btn = document.getElementById('sort-btn');
+
+		btn.addEventListener('click', () => {
+			btnHandle();
+		})
+	})()
+</script>
+</html>
+
+

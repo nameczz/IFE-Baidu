@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>CSS/HTML排版练习</title> 
+<style type="text/css">
+	body,html,h1,h2,h3,h4,p,ul,li,a,img,table,th,tr,td{margin: 0; padding: 0}
+	ul,li{list-style: none}
+	textarea{resize: none; vertical-align: top}
+
+	.box{background: #909090; padding: 10px}
+	.gray{position: relative; background: #909090; width: 100%; height: 20px; z-index: -1}
+
+	.article{padding: 10px; background: white; box-shadow: 3px 3px 5px #000; -webkit-box-shadow: 3px 3px 5px #000; -moz-box-shadow: 3px 3px 5px #000}
+	h1,h2,h4{margin-bottom: 10px;}
+	h2,h4{color: #909090}
+	img{margin: 10px 0}
+	article{text-indent: 25px; line-height: 25px; font-size:15px;}
+	.weight{font-weight: bold}
+	.wrap{color: #4876FF}
+
+	.img-wrapper{padding-left: 50px}
+	.img-wrapper li{width:700px; margin-top: 20px; border: 1px solid #909090; text-align: center;}
+
+	.number-sort{padding-left: 45px; margin-bottom: 15px}
+	.number-sort li{list-style: decimal; margin-bottom: 10px}
+
+	table{width: 100%; text-align: left; border-collapse: collapse; border: 1px solid #909090}
+	th{ background: black; color: white; }
+	td{border: 1px solid #909090}
+	.sum{background: #909090}
+
+	.slide{padding: 5px; color: #000; border-left: 2px solid #909090}
+	.form-wrapper{text-align: center;}
+	.form-wrapper >input{width: 150px}
+	.input-wrapper >span{display: inline-block; margin: 0 5px 10px 0; text-align: right; width: 100px; font-size: 14px;}
+	.input-wrapper p{width: 150px;font-size: 12px; margin: 0px 50% 20px 50%; color: #909090; text-align: center;}
+
+	.radio-wrapper {display:inline-block; width: 150px; vertical-align: top}
+	.radio-left,.check-left {float: left;}
+
+	.select-wrapper{display: inline-block; width: 150px; text-align: left;}
+	.checkbox-wrapper{display: inline-block; width: 150px; font-size:13px; vertical-align: top}
+
+	.btn{display:block; width: 80%; margin:20px auto;border-radius: 10px; background: #4876FF; height: 30px; color: white}
+
+	footer{width: 100%; height: 40px; background: black; color: white; text-align: center;line-height: 40px; font-size:12px;}
+
+</style>
+	
+</head>
+<body>
+	<div class="box">
+		<div class="article">
+			<h1>文章一级标题</h1>
+			<h2>文章二级标题</h2>
+			<h4>文章作者 文章发表时间</h4>
+			<article>
+				<span class="weight">Vue.js</span>
+				（读音 /vjuː/, 类似于 view） 是一套构建用户界面的 渐进式框架。与其他重量级框架不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整合。另一方面，Vue 完全有能力驱动采用单文件组件和 Vue 生态系统支持的库开发的复杂单页应用。
+				<a class="toBaidu" href="http://ife.baidu.com">去百度学院</a>
+				<span class="wrap">换行</span>
+				<br>
+				<span class="weight">Vue.js</span> 
+				的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。<span class="wrap">换行</span>
+				<br>
+				如果你是有经验的前端开发者，想知道 Vue.js 与其它库/框架的区别，查看对比其它框架。如果你是有经验的前端开发者，想知道 Vue.js 与其它库/框架的区别，查看对比其它框架。
+				<br>
+				<div style="text-indent: 0">
+					<img src="../img/pic_01.jpg" title="我在行内标签设置text-indent为0" alt="图片挂了QAQ">
+				</div>
+				<span class="weight">
+				因为这里上面有一个块元素，我用P标签时会没有line-height，而且你用调试工具抓取块元素时,只有上半部分标识为P标签。而aricle会保持正常.
+				</span>
+				<br>
+				以表示它们是 Vue.js 提供的特殊属性。
+				可能你已经猜到了，它们会在渲染过的 DOM 上应用特殊的响应式行为。这个指令的简单含义是说：将这个元素节点的 title 属性和 Vue 实例的 message 属性绑定到一起。
+				<a class="toBaidu" href="http://ife.baidu.com" target="_blank">新窗口打开百度前段学院</a>
+				<br>
+				你再次打开浏览器的控制台输入 app2.message = 'some new message'，你就会再一次看到这个绑定了title属性的HTML已经进行了更新。
+			</article>
+		</div>
+		<div class="gray"></div>
+		<div class="article">
+			<h1>另一篇文章一级标题</h1>
+			<h2>文章二级标题</h2>
+			<h4>文章作者 文章发表时间</h4>
+			<article>
+				<span class="weight">Vue.js</span>
+				（读音 /vjuː/, 类似于 view） 是一套构建用户界面的 渐进式框架。与其他重量级框架不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整合。另一方面，Vue 完全有能力驱动采用单文件组件和 Vue 生态系统支持的库开发的复杂单页应用。
+				<a class="toBaidu" href="http://ife.baidu.com">去百度学院</a>
+				<span class="wrap">换行</span>
+				<br>
+				<span class="weight">Vue.js</span> 
+				的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。<span class="wrap">换行</span>
+				<br>
+				如果你是有经验的前端开发者，想知道 Vue.js 与其它库/框架的区别，查看对比其它框架。如果你是有经验的前端开发者，想知道 Vue.js 与其它库/框架的区别，查看对比其它框架。
+				<br>
+				<div style="text-indent: 0">
+					<img src="../img/pic_01.jpg" title="我在行内标签设置text-indent为0" alt="图片挂了QAQ">
+				</div>
+				<ul>
+					<li>我是有缩进的NO.1——LI</li>
+					<li>我是有缩进的NO.2——LI</li>
+					<li>我是有缩进的NO.3——LI</li>
+				</ul>
+			</article>
+		</div>
+		<div class="gray"></div>
+		<div class="article">
+			<span class="weight">图片</span>
+			<div class="img-wrapper">
+				<ul>
+					<li>
+						<p>Beatiful Picture</p>
+						<img src="../img/pic_01.jpg">
+					</li>
+					<li>
+						<p>Beatiful Picture</p>
+						<img src="../img/pic_01.jpg">
+					</li>
+					<li>
+						<p>Beatiful Picture</p>
+						<img src="../img/pic_01.jpg">
+					</li>
+					<li>
+						<p>Beatiful Picture</p>
+						<img src="../img/pic_01.jpg">
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="gray"></div>
+		<div class="article">
+			<h1>文章一级标题</h1>
+			<h2>文章二级标题</h2>
+			<h4>文章作者 文章发表时间</h4>
+			<div class="number-sort">
+				<ul>
+					<li>数字排列1</li>
+					<li>数字排列2</li>
+					<li>数字排列3</li>
+				</ul>
+			</div>
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>成绩</th>
+				</tr>
+				<tr>
+					<td>Curry</td>
+					<td>Male</td>
+					<td><a href="javascript:">100<a></td>
+				</tr>
+				<tr>
+					<td>James</td>
+					<td>Male</td>
+					<td><a href="javascript:">100<a></td>
+				</tr>
+				<tr>
+					<td>Kobe</td>
+					<td>Male</td>
+					<td><a href="javascript:">100<a></td>
+				</tr>
+				<tr class="sum">
+					<td >总计</td>
+					<td colspan="2">1000</td>
+				</tr>
+			</table>
+		</div>
+		<div class="gray"></div>
+		<div class="article">
+			<h3 class="slide">这里是侧栏标题</h3>
+			<form class="form-wrapper">
+				<div class="input-wrapper">
+					<span>请输入邮箱地址</span>
+					<input type="email" name="email" placeholder="请输入您的邮箱地址">
+					<p>邮箱地址请按要求输入</p>
+				</div>
+				<div class="input-wrapper">
+					<span>请输入密码</span>
+					<input type="password" name="password" placeholder="请输入您的密码"><br><span>请重复输入密码</span>
+					<input type="password" name="password" placeholder="密码为6-16位英文数字">
+					<p>密码为6-16位英文数字</p>
+				</div>
+				<div class="input-wrapper">
+					<span>性别</span>
+					<div class="radio-wrapper">
+						<input type="radio" class='radio-left' name="sex">
+						<span class='radio-left'>男</span>
+						<input type="radio" class='radio-left' name="sex">
+						<span class='radio-left'>女</span>
+					</div>
+				</div>
+				<div class="input-wrapper">
+					<span>城市</span>
+					<div class="select-wrapper">
+						<select>
+							<option>北京</option>
+							<option>上海</option>
+							<option>广州</option>
+							<option>深圳</option>
+						</select>
+					</div>
+				</div>
+				<div class="input-wrapper">
+					<span>爱好</span>
+					<div class="checkbox-wrapper">
+						<input type="checkbox" class='check-left' name="sex">
+						<span class='check-left'>篮球</span>
+						<input type="checkbox" class='check-left' name="sex">
+						<span class='check-left'>足球</span>
+						<input type="checkbox" class='check-left' name="sex">
+						<span class='check-left'>艺术</span>
+					</div>
+				</div>
+				<div class="input-wrapper">
+					<span>个人描述</span>
+					<textarea></textarea>
+				</div>
+				<button class="btn">确认提交</button>
+			</form>
+			
+		</div>
+		<div class="gray"></div>
+	</div>
+	<footer>版权所有@</footer>
+</body>
+
+</html>
+
+

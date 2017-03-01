@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>IFE JS Task01</title> 
+
+</head>
+<body>
+	<label>
+		请输入您的年龄:
+		<input type="text" id="api-input">
+	</label>
+	<button id="btn">确认提交</button>
+	<div>您的年龄为: <span id="api-diplay">尚未录入</span></div>
+</body>
+<script type="text/javascript">
+	(function () {
+		let text = document.getElementById('api-diplay'),
+		 	btn = document.getElementById('btn');
+
+		// btn.addEventListener('click', () => {
+		// 	let age = document.getElementById('api-input').value;
+		// 	if (age.toString().match(/\D+/) || age < 1 || age >= 200) {
+		// 		text.innerHTML = '请输入正确的数字'
+		// 	} else {
+		// 		text.innerHTML = age;
+		// 	}
+		// })
+		
+		btn.onclick = () => {
+			let age = document.getElementById('api-input').value;
+			if (age.toString().match(/\D+/) || age < 1 || age >= 200) {
+				text.innerHTML = '请输入正确的数字'
+			} else {
+				text.innerHTML = age;
+			}
+		}
+	})()
+</script>
+</html>
+
+
