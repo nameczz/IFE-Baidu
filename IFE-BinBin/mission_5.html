@@ -19,7 +19,13 @@
 </body>
 <script type="text/javascript">
 
-	let copy = [];
+	let copy = [36,60,150,90,66,30];
+	(function () {
+		let queue = document.getElementById('queue');
+		for (let i=0; i<copy.length; i++) {
+			queue.innerHTML += `<span style='height:${copy[i]}px'></span>`;
+		}
+	})()
 	//快排  不知如何让排序分时段完成，就没法让他可视化，试过setTimeout不行。。请大神指教~
 	let quickSort = arr => {
 		if (arr.length < 2) return arr;
