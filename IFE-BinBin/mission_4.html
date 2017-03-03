@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>IFE JS Task04 模拟队列</title> 
+	<style type="text/css">
+		.box{text-align: center; padding: 10px}
+		.box button:nth-of-type(2){margin-right: 20px}
+		p >span{padding:10px; margin:10px; text-align: center; font-size: 12px; background: #FF83FA }
+		button{cursor: pointer;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<input type="text" id="textNum">
+		<button>左侧入</button>
+		<button>右侧入</button>
+		<button>左侧出</button>
+		<button>右侧出</button>
+		<p id="queue">
+			
+		</p>
+	</div>
+</body>
+<script type="text/javascript">
+ 	
+ 	let queueMove = (direction, move) => {
+ 		let queue = document.getElementById('queue'),
+ 			value = document.getElementById('textNum').value,
+ 			spans = document.getElementsByTagName('span');
+ 			
+ 		if (value.match(/\s*[^-0-9]/) || value === '') throw '请输入整数';
+
+ 		if (direction === 'left' && move === 'in') {
+ 			queue.innerHTML = `<span>${value}</span>` + queue.innerHTML;
+ 		} else if (direction === 'left' && move === 'out') {
+ 			spans.length === 0 ? alert('队列是空的不可再进行删除操作') : queue.removeChild(spans[0]); 
+ 		} else if (direction === 'right' && move === 'in') {
+ 			queue.innerHTML += `<span>${value}</span>`;
+ 		} else if (direction === 'right' && move === 'out'){
+ 			spans.length === 0 ? alert('队列是空的不可再进行删除操作') : queue.removeChild(spans[spans.length - 1]); 
+ 		} else {
+ 			return false;
+ 		}
+ 	}
+
+ 	let init = () => {
+	 	let btns = document.getElementsByTagName('button');
+
+	 	for (let i=0; i<btns.length; i++) {
+	 		btns[i].addEventListener('click', () => {
+	 			i === 0 ? queueMove('left', 'in') : i === 1 ? queueMove('right', 'in') : i === 2 ? queueMove('left', 'out') : queueMove('right', 'out') ;
+ 			})
+	 	}
+ 	}
+
+ 	init();
+</script>
+</html>
+
+
